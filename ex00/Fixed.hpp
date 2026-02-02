@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:13 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/02 15:46:50 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/02 16:10:20 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ public:
     Fixed(const Fixed &num);
     Fixed &operator=(const Fixed &num);
     ~Fixed();
+    int getRawBits(void) const;
+    void setRawBits(int const raw);
 };
 
 

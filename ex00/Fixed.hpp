@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
+/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:13 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/02 16:28:02 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/04 16:19:42 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
 {
 private:
     int _value;
-    static const int _bits = 8;
+    static const int _fractional_bits = 8;
 public:
     Fixed();
     Fixed(const Fixed &num);

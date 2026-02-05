@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:03 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/04 16:54:36 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/05 18:23:42 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ Fixed::Fixed() : _value(0)
     std::cout << "Default constructor called" << std::endl;
 }
 
+/*
+* initializes a Fixed number with an int. To do so we need to shift the fractional
+* part of the number into the integer part
+* with `1 << _fractional_bits`, we shift 1 by 8 bits (`_fractional_bits == 8`).
+* It means we multiply by 2^8 = 256 the `num` passed as a parameter.
+*/
 Fixed::Fixed(const int num)
 {
    std::cout << "Int constructor called" << std::endl;

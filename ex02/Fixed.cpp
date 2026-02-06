@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:03 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/06 16:11:46 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/06 16:32:35 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,11 +128,11 @@ Fixed Fixed::operator-(const Fixed &num)
 	return (substracted);
 }
 
-Fixed Fixed::operator*(const Fixed &num)
+Fixed Fixed::operator*(const Fixed &num) const
 {
 	Fixed	multiplied;
 
-	multiplied.setRawBits(this->getRawBits() * num.getRawBits());
+	multiplied.setRawBits(this->toFloat() * num.toFloat() * (1 << _fractional_bits));
 	return (multiplied);
 }
 

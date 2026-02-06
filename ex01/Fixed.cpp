@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:03 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/06 14:07:44 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/06 14:40:04 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,13 @@ Fixed &Fixed::operator=(const Fixed &num)
     return (*this);
 }
 
+/*
+* this function must be a non-member one, because in C++, the left-hand operand
+of a member operator function must be an instance of the class it belongs to.
+This weird sentence means that if operator<<() would have been a member function,
+the syntax to use would be `Fixed << std::cout;`, but we want to implement the
+standard `std::cout << Fixed;`
+*/
 std::ostream &operator<<(std::ostream &output, Fixed const &i)
 {
 	output << i.toFloat();

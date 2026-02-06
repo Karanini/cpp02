@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:13 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/06 14:06:08 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/06 15:20:45 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,29 @@ class Fixed
 	Fixed(const float num);
 	Fixed(const Fixed &num);
 	Fixed   &operator=(const Fixed &num);
+	Fixed	&operator>(const Fixed &num) const;
+	Fixed	&operator<(const Fixed &num) const;
+	Fixed	&operator>=(const Fixed &num) const;
+	Fixed	&operator<=(const Fixed &num) const;
+	Fixed	&operator==(const Fixed &num) const;
+	Fixed	&operator!=(const Fixed &num) const;
+	Fixed	&operator+(const Fixed &num);
+	Fixed	&operator-(const Fixed &num);
+	Fixed	&operator*(const Fixed &num);
+	Fixed	&operator/(const Fixed &num);
+	Fixed	&operator++();
+	Fixed	&operator++(int);
+	Fixed	&operator--();
+	Fixed	&operator--(int);
 	~Fixed();
 	int     getRawBits(void) const;
 	void    setRawBits(int const raw);
 	float   toFloat(void) const;
 	int     toInt(void) const;
+	Fixed	&min(Fixed &a, Fixed &b);
+	Fixed	&min(const Fixed &a, const Fixed &b);
+	Fixed	&max(Fixed &a, Fixed &b);
+	Fixed	&max(const Fixed &a, const Fixed &b);
 };
 
 std::ostream &operator<<(std::ostream &output, Fixed const &i);

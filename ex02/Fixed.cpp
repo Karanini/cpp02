@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:03 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/06 14:40:04 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/06 15:06:51 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ Fixed::Fixed(const Fixed &num)
 //returns a reference to avoid useless copies (a return by value implies a temp copy)
 //also, allows to successfully execute code like `(a = b).setRawBits(0);`. With
 //a return by value, the temp copy would have been reset to 0 and not `a`.
+// The compiler understands this != &num because we are comparing pointers,
+not the objects themselves.
 */
 Fixed &Fixed::operator=(const Fixed &num)
 {

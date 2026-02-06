@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:13 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/06 15:20:45 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/06 15:56:52 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@ class Fixed
 	Fixed(const float num);
 	Fixed(const Fixed &num);
 	Fixed   &operator=(const Fixed &num);
-	Fixed	&operator>(const Fixed &num) const;
-	Fixed	&operator<(const Fixed &num) const;
-	Fixed	&operator>=(const Fixed &num) const;
-	Fixed	&operator<=(const Fixed &num) const;
-	Fixed	&operator==(const Fixed &num) const;
-	Fixed	&operator!=(const Fixed &num) const;
-	Fixed	&operator+(const Fixed &num);
-	Fixed	&operator-(const Fixed &num);
-	Fixed	&operator*(const Fixed &num);
-	Fixed	&operator/(const Fixed &num);
+	bool operator>(const Fixed &num) const;
+	bool operator<(const Fixed &num) const;
+	bool operator>=(const Fixed &num) const;
+	bool operator<=(const Fixed &num) const;
+	bool operator==(const Fixed &num) const;
+	bool operator!=(const Fixed &num) const;
+	Fixed operator+(const Fixed &num);
+	Fixed operator-(const Fixed &num);
+	Fixed operator*(const Fixed &num);
+	Fixed operator/(const Fixed &num);
 	Fixed	&operator++();
 	Fixed	&operator++(int);
 	Fixed	&operator--();

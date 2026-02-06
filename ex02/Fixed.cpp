@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:03 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/06 15:06:51 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/06 15:56:47 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,68 @@ std::ostream &operator<<(std::ostream &output, Fixed const &i)
 {
 	output << i.toFloat();
 	return (output);
+}
+
+bool	Fixed::operator>(const Fixed &num) const
+{
+	return (this->toFloat() > num.toFloat());
+}
+
+bool	Fixed::operator<(const Fixed &num) const
+{
+	return (this->toFloat() < num.toFloat());
+}
+
+bool	Fixed::operator>=(const Fixed &num) const
+{
+	return (this->toFloat() >= num.toFloat());
+}
+
+bool	Fixed::operator<=(const Fixed &num) const
+{
+	return (this->toFloat() <= num.toFloat());
+}
+
+bool	Fixed::operator==(const Fixed &num) const
+{
+	return (this->toFloat() == num.toFloat());
+}
+
+bool	Fixed::operator!=(const Fixed &num) const
+{
+	return (this->toFloat() != num.toFloat());
+}
+
+Fixed Fixed::operator+(const Fixed &num)
+{
+	Fixed	added;
+
+	added.setRawBits(this->toFloat() + num.toFloat());
+	return (added);
+}
+
+Fixed Fixed::operator-(const Fixed &num)
+{
+	Fixed	substracted;
+
+	substracted.setRawBits(this->toFloat() - num.toFloat());
+	return (substracted);
+}
+
+Fixed Fixed::operator*(const Fixed &num)
+{
+	Fixed	multiplied;
+
+	multiplied.setRawBits(this->toFloat() * num.toFloat());
+	return (multiplied);
+}
+
+Fixed Fixed::operator/(const Fixed &num)
+{
+	Fixed	divided;
+
+	divided.setRawBits(this->toFloat() / num.toFloat());
+	return (divided);
 }
 
 int Fixed::getRawBits(void) const

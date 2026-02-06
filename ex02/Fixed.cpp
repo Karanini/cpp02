@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:03 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/06 15:56:47 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/06 16:11:46 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Fixed::Fixed() : _value(0)
 {
-    std::cout << "Default constructor called" << std::endl;
+    // std::cout << "Default constructor called" << std::endl;
 }
 
 /*
@@ -116,7 +116,7 @@ Fixed Fixed::operator+(const Fixed &num)
 {
 	Fixed	added;
 
-	added.setRawBits(this->toFloat() + num.toFloat());
+	added.setRawBits(this->getRawBits() + num.getRawBits());
 	return (added);
 }
 
@@ -124,7 +124,7 @@ Fixed Fixed::operator-(const Fixed &num)
 {
 	Fixed	substracted;
 
-	substracted.setRawBits(this->toFloat() - num.toFloat());
+	substracted.setRawBits(this->getRawBits() - num.getRawBits());
 	return (substracted);
 }
 
@@ -132,7 +132,7 @@ Fixed Fixed::operator*(const Fixed &num)
 {
 	Fixed	multiplied;
 
-	multiplied.setRawBits(this->toFloat() * num.toFloat());
+	multiplied.setRawBits(this->getRawBits() * num.getRawBits());
 	return (multiplied);
 }
 
@@ -140,7 +140,7 @@ Fixed Fixed::operator/(const Fixed &num)
 {
 	Fixed	divided;
 
-	divided.setRawBits(this->toFloat() / num.toFloat());
+	divided.setRawBits(this->getRawBits() / num.getRawBits());
 	return (divided);
 }
 

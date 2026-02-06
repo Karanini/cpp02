@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:24:50 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/06 14:00:15 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/06 16:11:07 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,23 @@ int	main(void)
 	Fixed const d(b);
 
 	a = Fixed(1234.4321f);
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+
+	std::cout << "--- Arithmetic tests ---" << std::endl;
+	std::cout << "a: " << a << std::endl;
+	std::cout << "b: " << b << std::endl;
+	std::cout << "c: " << c << std::endl;
+	std::cout << "a + b is " << a + b << std::endl;
+	std::cout << "a - b is " << a - b << std::endl;
+	std::cout << "a * b is " << a * b << std::endl;
+	std::cout << "a / b is " << a / b << std::endl;
+
+	std::cout << "--- Comparison tests ---" << std::endl;
+	std::cout << "a > b is " << (a > b) << std::endl;
+	std::cout << "a < b is " << (a < b) << std::endl;
+	std::cout << "a >= b is " << (a >= b) << std::endl;
+	std::cout << "a <= b is " << (a <= b) << std::endl;
+	std::cout << "b == d is " << (b == d) << std::endl;
+	std::cout << "a != b is " << (a != b) << std::endl;
+
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:13 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/04 16:19:42 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/06 14:06:08 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ class Fixed
 	float   toFloat(void) const;
 	int     toInt(void) const;
 };
+
+std::ostream &operator<<(std::ostream &output, Fixed const &i);
 
 #endif

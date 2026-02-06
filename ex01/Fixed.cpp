@@ -6,7 +6,7 @@
 /*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:03 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/05 18:23:42 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/06 14:07:44 by bkaras-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,28 @@ Fixed &Fixed::operator=(const Fixed &num)
     return (*this);
 }
 
+std::ostream &operator<<(std::ostream &output, Fixed const &i)
+{
+	output << i.toFloat();
+	return (output);
+}
+
 int Fixed::getRawBits(void) const
 {
-    std::cout << "getRawBits member function called" << std::endl;
     return (this->_value);
 }
 
 void Fixed::setRawBits(int const raw)
 {
     this->_value = raw;
+}
+
+float	Fixed::toFloat(void) const
+{
+	return ((float)this->getRawBits() / (1 << _fractional_bits));
+}
+
+int		Fixed::toInt(void) const
+{
+	return (this->getRawBits() / (1 << _fractional_bits));
 }

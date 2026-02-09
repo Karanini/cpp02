@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:03 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/09 16:18:18 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/09 16:20:45 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,19 @@ Fixed::Fixed() : _value(0)
 */
 Fixed::Fixed(const int num)
 {
-   std::cout << "Int constructor called" << std::endl;
+//    std::cout << "Int constructor called" << std::endl;
    this->_value = num * (1 << _fractional_bits);
 }
 
 Fixed::Fixed(const float num)
 {
-   std::cout << "Float constructor called" << std::endl;
+//    std::cout << "Float constructor called" << std::endl;
    this->_value = roundf(num * (1 << _fractional_bits));
 }
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called" << std::endl;
+    // std::cout << "Destructor called" << std::endl;
 }
 
 //copy constructor. No need to copy _fractional_bits because it's static
@@ -48,8 +48,7 @@ Fixed::~Fixed()
 //make a copy using the copy constructor. So infinite recursion
 Fixed::Fixed(const Fixed &num)
 {
-    std::cout << "Copy constructor called" << std::endl;
-    // this->_value = num._value;
+    // std::cout << "Copy constructor called" << std::endl;
     *this = num;
 }
 
@@ -66,7 +65,7 @@ not the objects themselves.
 */
 Fixed &Fixed::operator=(const Fixed &num)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    // std::cout << "Copy assignment operator called" << std::endl;
     if (this != &num)
         this->_value = num.getRawBits();
     return (*this);

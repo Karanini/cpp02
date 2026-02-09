@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:24:50 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/09 13:01:18 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/09 16:19:50 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,22 +36,22 @@ int	main(void)
 	a = Fixed(1234.4321f);
 
 	std::cout << "--- Arithmetic tests ---" << std::endl;
-	// std::cout << "a: " << a << std::endl;
-	// std::cout << "b: " << b << std::endl;
-	// std::cout << "c: " << c << std::endl;
-	// std::cout << "a + b is " << a + b << std::endl;
-	// std::cout << "a - b is " << a - b << std::endl;
+	std::cout << "a: " << a << std::endl;
+	std::cout << "b: " << b << std::endl;
+	std::cout << "c: " << c << std::endl;
+	std::cout << "a + b is " << a + b << std::endl;
+	std::cout << "a - b is " << a - b << std::endl;
 	std::cout << "a * b is " << a * b << std::endl;
 	std::cout << "b * a is " << b * a << std::endl;
 	std::cout << "a / b is " << a / b << std::endl;
 
-	// std::cout << "--- Comparison tests ---" << std::endl;
-	// std::cout << "a > b is " << (a > b) << std::endl;
-	// std::cout << "a < b is " << (a < b) << std::endl;
-	// std::cout << "a >= b is " << (a >= b) << std::endl;
-	// std::cout << "a <= b is " << (a <= b) << std::endl;
-	// std::cout << "b == d is " << (b == d) << std::endl;
-	// std::cout << "a != b is " << (a != b) << std::endl;
+	std::cout << "--- Comparison tests ---" << std::endl;
+	std::cout << "a > b is " << (a > b) << std::endl;
+	std::cout << "a < b is " << (a < b) << std::endl;
+	std::cout << "a >= b is " << (a >= b) << std::endl;
+	std::cout << "a <= b is " << (a <= b) << std::endl;
+	std::cout << "b == d is " << (b == d) << std::endl;
+	std::cout << "a != b is " << (a != b) << std::endl;
 
 	return (0);
 }

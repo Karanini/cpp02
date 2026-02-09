@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:03 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/09 15:29:16 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/09 15:58:31 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,12 +145,24 @@ Fixed Fixed::operator*(const Fixed &num) const
 	return (multiplied);
 }
 
-Fixed Fixed::operator/(const Fixed &num)
+/*
+* division operator overload. 
+* We check if `num.getRawBits() != 0` and not `num.toFloat()` because it 
+* is a direct integer comparison, faster than floating point. Also the value 0 is 0 in raw bits, 
+* but not necessarily in floating points that can have some decimal residues.
+*/
+Fixed Fixed::operator/(const Fixed &num) const
 {
 	Fixed	divided;
 
-	divided.setRawBits((this->toFloat() / num.toFloat()) * (1 << _fractional_bits));
-	return (divided);
+	if (num.getRawBits() != 0)
+		divided.setRawBits((this->toFloat() / num.toFloat()) * (1 << _fractional_bits));
+	else
+	{
+		std::cout << "Error: division by zero!" << std::endl;
+		divided.setRawBits(0);
+	}
+	return (divided);	
 }
 
 /*
@@ -206,4 +218,9 @@ float	Fixed::toFloat(void) const
 int		Fixed::toInt(void) const
 {
 	return (this->getRawBits() / (1 << _fractional_bits));
+}
+
+static	Fixed	&min(Fixed &a, Fixed &b)
+{
+	
 }

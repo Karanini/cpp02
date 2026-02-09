@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:03 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/09 15:26:45 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/09 15:29:16 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,6 +172,19 @@ Fixed &Fixed::operator++(int)
 {
 	Fixed	&old_value = *this;
 	this->_value++;
+	return (old_value);
+}
+
+Fixed &Fixed::operator--()
+{
+	this->_value--;
+	return (*this);
+}
+
+Fixed &Fixed::operator--(int)
+{
+	Fixed	&old_value = *this;
+	this->_value--;
 	return (old_value);
 }
 

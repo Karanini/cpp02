@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 17:33:11 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/09 18:05:57 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/09 18:06:45 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,9 @@ Point   &Point::operator=(const Point &point)
 {
     (void) point;
     return (*this);
+}
+
+Point::~Point()
+{
+
 }

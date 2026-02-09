@@ -6,7 +6,7 @@
 #    By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/16 14:08:56 by bkaras-g          #+#    #+#              #
-#    Updated: 2026/02/09 17:32:12 by michel_32        ###   ########.fr        #
+#    Updated: 2026/02/09 18:07:30 by michel_32        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,12 @@
 NAME = bsp
 
 SRC = Fixed.cpp \
-		main.cpp
+		main.cpp \ 
+		Point.cpp \
+		bsp.cpp
 
-HEADERS = Fixed.hpp
+HEADERS = Fixed.hpp \
+			Point.hpp
 
 RM = rm -f
 OBJ := $(patsubst %.cpp, %.o, $(SRC))

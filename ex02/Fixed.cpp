@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:03 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/06 16:32:35 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/09 12:47:42 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@ Fixed::Fixed() : _value(0)
 }
 
 /*
-* initializes a Fixed number with an int. To do so we need to shift the fractional
-* part of the number into the integer part
-* with `1 << _fractional_bits`, we shift 1 by 8 bits (`_fractional_bits == 8`).
+* 
+* initializes a Fixed number with an int. 
+* In fixed-point arithmetic, the "raw" value representing a number X is X * 2^n, 
+* where n is the number of fractional bits (here 8).
+* So we need to shift the fractional part of the number into the integer part.
+* With `1 << _fractional_bits`, we shift 1 by 8 bits (`_fractional_bits == 8`).
 * It means we multiply by 2^8 = 256 the `num` passed as a parameter.
 */
 Fixed::Fixed(const int num)
@@ -128,6 +131,12 @@ Fixed Fixed::operator-(const Fixed &num)
 	return (substracted);
 }
 
+/*
+* In fixed-point arithmetic, the "raw" value representing a number X is X * 2^n, 
+* where n is the number of fractional bits (here 8).
+* Multiplying raw bits directly with `getRawBits()` would scale the result by 2^(2*bits).
+* Converting to float avoids this and prevents potential integer overflow.
+*/
 Fixed Fixed::operator*(const Fixed &num) const
 {
 	Fixed	multiplied;

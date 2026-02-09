@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:03 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/09 16:20:45 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/09 16:38:16 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ bool	Fixed::operator!=(const Fixed &num) const
 	return (this->toFloat() != num.toFloat());
 }
 
-Fixed Fixed::operator+(const Fixed &num)
+Fixed Fixed::operator+(const Fixed &num) const
 {
 	Fixed	added;
 
@@ -122,7 +122,7 @@ Fixed Fixed::operator+(const Fixed &num)
 	return (added);
 }
 
-Fixed Fixed::operator-(const Fixed &num)
+Fixed Fixed::operator-(const Fixed &num) const
 {
 	Fixed	substracted;
 
@@ -169,6 +169,9 @@ Fixed Fixed::operator/(const Fixed &num) const
 * Increases the fixed-point value by the smallest representable ϵ, such that 1 + ϵ > 1
 * Here the ϵ is 2^(-8), because we have 8 fractional bits. Since the raw value is already the
 * actual value multiplied by 2^8, we simply increase the raw value by 1.
+* We return by reference and not by value because a return by value would have implied
+* a useless temp copy and would not permit operator chaining. For example, with `++++a`
+* the 1st `++` would return a temp copy that the 2nd `++` would use.  
 */
 Fixed &Fixed::operator++()
 {
@@ -178,10 +181,13 @@ Fixed &Fixed::operator++()
 
 /*
 * Post-increment operator
+* We return by value here because a return by value makes a temp copy of the variable. 
+* A return by reference is not possible because `old_value` stops existing at the end
+* of the function, so the reference would become dangling. 
 */
-Fixed &Fixed::operator++(int)
+Fixed Fixed::operator++(int)
 {
-	Fixed	&old_value = *this;
+	Fixed	old_value(*this);
 	this->_value++;
 	return (old_value);
 }
@@ -192,9 +198,9 @@ Fixed &Fixed::operator--()
 	return (*this);
 }
 
-Fixed &Fixed::operator--(int)
+Fixed Fixed::operator--(int)
 {
-	Fixed	&old_value = *this;
+	Fixed	old_value(*this);
 	this->_value--;
 	return (old_value);
 }

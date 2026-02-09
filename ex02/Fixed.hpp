@@ -34,14 +34,14 @@ class Fixed
 	bool operator<=(const Fixed &num) const;
 	bool operator==(const Fixed &num) const;
 	bool operator!=(const Fixed &num) const;
-	Fixed operator+(const Fixed &num);
-	Fixed operator-(const Fixed &num);
+	Fixed operator+(const Fixed &num) const;
+	Fixed operator-(const Fixed &num) const;
 	Fixed operator*(const Fixed &num) const;
 	Fixed operator/(const Fixed &num) const;
 	Fixed	&operator++();
-	Fixed	&operator++(int);
+	Fixed	operator++(int);
 	Fixed	&operator--();
-	Fixed	&operator--(int);
+	Fixed	operator--(int);
 	~Fixed();
 	int     getRawBits(void) const;
 	void    setRawBits(int const raw);

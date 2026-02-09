@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:03 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/09 13:01:01 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/09 13:30:53 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,6 +151,17 @@ Fixed Fixed::operator/(const Fixed &num)
 
 	divided.setRawBits((this->toFloat() / num.toFloat()) * (1 << _fractional_bits));
 	return (divided);
+}
+
+/*
+* Increases the fixed-point value by the smallest representable ϵ, such that 1 + ϵ > 1
+* Here the ϵ is 2^(-8), because we have 8 fractional bits. Since the raw value is already the
+* actual value multiplied by 2^8, we simply increase the raw value by 1.
+*/
+Fixed &Fixed::operator++()
+{
+	this->_value++;
+	return (*this);
 }
 
 int Fixed::getRawBits(void) const

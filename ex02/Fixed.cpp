@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:03 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/09 12:47:42 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/09 13:01:01 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,7 @@ Fixed Fixed::operator/(const Fixed &num)
 {
 	Fixed	divided;
 
-	divided.setRawBits(this->getRawBits() / num.getRawBits());
+	divided.setRawBits((this->toFloat() / num.toFloat()) * (1 << _fractional_bits));
 	return (divided);
 }
 

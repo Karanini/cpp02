@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:24:50 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/06 16:24:35 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/02/09 13:01:18 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(void)
 	// std::cout << "a - b is " << a - b << std::endl;
 	std::cout << "a * b is " << a * b << std::endl;
 	std::cout << "b * a is " << b * a << std::endl;
-	// std::cout << "a / b is " << a / b << std::endl;
+	std::cout << "a / b is " << a / b << std::endl;
 
 	// std::cout << "--- Comparison tests ---" << std::endl;
 	// std::cout << "a > b is " << (a > b) << std::endl;

@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 17:33:30 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/09 19:04:45 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/02/09 19:13:44 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,20 @@ static Fixed calculateArea(Point const a, Point const b, Point const c)
         return (res * -1);
     else
         return (res);
+}
+
+/*
+* `if (area_APC == 0 || area_BPC == 0 || area_APB == 0)` means that the point
+* is on an edge or a vertex so return `false`
+*/
+bool bsp(Point const a, Point const b, Point const c, Point const point)
+{
+    Fixed area_ABC = calculateArea(a, b, c);
+    Fixed area_APC = calculateArea(a, point, c);
+    Fixed area_BPC = calculateArea(b, point, c);
+    Fixed area_APB = calculateArea(a, point, b);
+
+    if (area_APC == 0 || area_BPC == 0 || area_APB == 0)
+        return (false);
+    return (area_ABC == area_APC + area_BPC + area_APB);
 }

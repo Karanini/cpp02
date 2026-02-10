@@ -33,6 +33,5 @@ public:
 };
 
 bool bsp( Point const a, Point const b, Point const c, Point const point);
-static Fixed calculateArea(Point const a, Point const b, Point const c);
 
 #endif

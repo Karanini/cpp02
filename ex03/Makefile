@@ -15,7 +15,7 @@
 NAME = bsp
 
 SRC = Fixed.cpp \
-		main.cpp \ 
+		main.cpp \
 		Point.cpp \
 		bsp.cpp
 

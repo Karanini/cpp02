@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:03 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/04 16:19:42 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/09 15:54:11 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ Fixed::Fixed(const Fixed &num)
 /*
 //copy assignment operator. Called when we write `a = b` with a and b objects
 // of Fixed class
-//technically possible to pass num by value here, but inefficient to make
+//technically possible to pass `num` by value here, but inefficient to make
 //a useless copy
 //returns a reference to avoid useless copies (a return by value implies a temp copy)
 //also, allows to successfully execute code like `(a = b).setRawBits(0);`. With
-//a return by value, the temp copy would have been reset to 0 and not `a`.
+//a return by value, the temp copy would have been set to 0 and not `a`.
 */
 Fixed &Fixed::operator=(const Fixed &num)
 {

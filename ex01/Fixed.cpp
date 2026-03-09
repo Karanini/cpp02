@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bkaras-g <bkaras-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:03 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/06 14:40:04 by bkaras-g         ###   ########.fr       */
+/*   Updated: 2026/03/09 16:07:22 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ Fixed::Fixed(const int num)
    this->_value = num * (1 << _fractional_bits);
 }
 
+/*
+* initializes a Fixed number with a float. Same principle than `Fixed(int)` above, 
+* but we `roundf()` the discard the fractional part. 
+*/
 Fixed::Fixed(const float num)
 {
    std::cout << "Float constructor called" << std::endl;
@@ -70,7 +74,7 @@ Fixed &Fixed::operator=(const Fixed &num)
 /*
 * this function must be a non-member one, because in C++, the left-hand operand
 of a member operator function must be an instance of the class it belongs to.
-This weird sentence means that if operator<<() would have been a member function,
+This weird sentence means that if `operator<<()` would have been a member function,
 the syntax to use would be `Fixed << std::cout;`, but we want to implement the
 standard `std::cout << Fixed;`
 */

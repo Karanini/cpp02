@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:24:50 by michel_32         #+#    #+#             */
-/*   Updated: 2026/02/09 16:26:05 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/03/09 17:29:48 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,23 @@ int	main(void)
 	std::cout << "e initially: " << e << std::endl;
 	std::cout << "++e: " << ++e << std::endl;
 	std::cout << "e now: " << e << std::endl;
+	std::cout << "++(++e): " << ++(++e) << std::endl;
+	std::cout << "e now: " << e << std::endl;
 	std::cout << "e++: " << e++ << std::endl;
 	std::cout << "e now: " << e << std::endl;
 	std::cout << "--e: " << --e << std::endl;
 	std::cout << "e now: " << e << std::endl;
+	std::cout << "--(--e): " << --(--e) << std::endl;
+	std::cout << "e now: " << e << std::endl;
 	std::cout << "e--: " << e-- << std::endl;
 	std::cout << "e now: " << e << std::endl;
+
+	std::cout << "\n--- Precision tests ---" << std::endl;
+	Fixed f(0.00390625f); // 1/256 - smallest positive value
+	Fixed g(0.001953125f); // 0.5/256 - should round
+	std::cout << "1/256: " << f << std::endl;
+	std::cout << "0.5/256: " << g << std::endl;
+	std::cout << "f * 2: " << f * Fixed(2) << std::endl;
 
 	std::cout << "\n--- Min/Max tests ---" << std::endl;
 	std::cout << "min(a, b): " << Fixed::min(a, b) << std::endl;

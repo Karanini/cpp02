@@ -6,7 +6,7 @@
 /*   By: michel_32 <michel_32@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/02 15:25:03 by michel_32         #+#    #+#             */
-/*   Updated: 2026/03/09 16:07:22 by michel_32        ###   ########.fr       */
+/*   Updated: 2026/03/09 16:12:55 by michel_32        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,11 @@ of a member operator function must be an instance of the class it belongs to.
 This weird sentence means that if `operator<<()` would have been a member function,
 the syntax to use would be `Fixed << std::cout;`, but we want to implement the
 standard `std::cout << Fixed;`
+
+In general, the `operator<<()` function takes two arguments: 
+ - `std::ostream &output` representing the left-hand operand, the stream
+ - `const YourClass &object` representing the right-hand operand, the object to 
+ print
 */
 std::ostream &operator<<(std::ostream &output, Fixed const &i)
 {
